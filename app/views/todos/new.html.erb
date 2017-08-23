@@ -1,27 +1,3 @@
 <h1>Create a new Todo</h1>
 
-<% if @todo.errors.any? %>
-  <p>You got the following errors:</p>
-  <ul>
-    
-    <% @todo.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_for @todo do |f| %> <!-- Opens a Ruby on Rails form named @todo and define f as its varible -->
-  <p>
-    <%= f.label(:name) %> 
-    <%= f.text_field(:name) %> <!-- @todo.name -->
-  </p>
-  <p>
-    <%= f.label(:description) %>
-    <%= f.text_area(:description) %><!-- @todo.description -->
-  </p>
-  <p> 
-    <%= f.submit %>
-  </p>
-<% end %>
-
-<p><%= link_to "Back to todos list", todos_path %> </p>
+<%= render 'form' %>
