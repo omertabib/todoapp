@@ -1,6 +1,7 @@
 class TodosController < ApplicationController
   
   def index
+    @todo = Todo.all
     
   end
   
@@ -31,7 +32,6 @@ class TodosController < ApplicationController
     if @todo.update(todo_params)
       redirect_to todo_path(@todo)
       flash[:notice] = "Todo was edited successfuly"
-      
     else
       render 'edit'
     end
